@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Langwing",
+  "description": "Translate Anything",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "bk.jpg"
+  },
+  "icons": {
+    "16": "bk.jpg",
+    "32": "bk.jpg",
+    "48": "bk.jpg",
+    "128": "bk.jpg"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": [
+      "keys.js",
+      "v2/video.js",
+      "v2/page.js",
+      "v2/image.js"
+    ]
+  }],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabCapture",
+    "scripting",
+    "tabs",
+    "storage",
+    "fontSettings",
+    "contentSettings",
+    "debugger",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": ["<all_urls>"]
+}
