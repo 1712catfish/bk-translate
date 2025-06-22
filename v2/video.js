@@ -252,7 +252,7 @@ async function cerebrasVideoTranslateTextList(strList, chunkSize = 50) {
 class VideoGeminiAPI {
 	constructor() {
 		// https://ai.google.dev/gemini-api/docs/text-generation?lang=python
-		this.apiKey = "AIzaSyDfdIUJl9aiJ_lJqknUxshCLZW2HeuzFk0";
+		this.apiKey = GEMINI_API_KEY
 		this.endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 		this.system_instruction = `Given a list of texts. 
