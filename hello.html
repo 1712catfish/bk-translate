@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search</title>
+    <style>
+        html, body {
+            /*margin: 0;*/
+            /*padding: 0;*/
+            /*height: 100px;*/
+            /*width: 1000px;*/
+            /*box-sizing: border-box;*/
+            font-family: "San Francisco Display Regular";
+            height: 550px;
+            width: 700px;
+
+        }
+
+        .container {
+            display: flex;
+            /*justify-content: center;*/
+            padding: 50px 10px 10px;
+            flex-direction: column;
+            align-items: center;
+
+            /*height: 550px;*/
+            /*width: 700px;*/
+            /*padding: 20px;*/
+        }
+
+        #searchBox {
+            width: 90%;
+            font-size: 16px;
+            font-family: "San Francisco Display Regular";
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border-radius: 999px;
+            border: 1px solid #ccc;
+            background-color: #FFF8DC;
+            outline: none;
+
+        }
+
+        #searchBox:focus {
+            border: 2px solid black; /* highlight with black border */
+        }
+
+        #dropdown {
+            width: 90%;
+            /*max-width: 500px;*/
+            margin-top: 5px;
+            border: 1px black;
+            /*border-radius: 4px;*/
+            /*max-height: 200px;*/
+            overflow-y: auto;
+            display: none;
+            background: white;
+            position: relative;
+            /*z-index: 999;*/
+        }
+
+        .dropdown-item {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .dropdown-item:hover    {
+            background-color: #FFF8DC;
+            font-weight: bold;
+        }
+
+
+
+
+    </style>
+</head>
+
+<script src="keys.js"></script>
+
+
+<body>
+<div class="container">
+    <label style="font-size: 27px" for="searchBox">What's on your mind?</label>
+
+    <div style="height: 20px"></div>
+
+    <input type="text" id="searchBox" placeholder="🔍Cho tôi hỏi..." autocomplete="off" />
+
+    <div style="height: 20px"></div>
+
+    <div id="enBox" style="font-style: italic;color: blue;">Tiếng anh là:</div>
+
+    <div style="height: 20px"></div>
+
+    <div id="dropdown"></div>
+</div>
+
+<!--<script>-->
+<!--	function getGoogleSuggestions1(query, gl, callback) {-->
+<!--		// Create a unique callback name to avoid conflicts-->
+<!--		const callbackName = "handleSuggestions_" + Math.random().toString(36).substring(2);-->
+
+<!--		// Attach the callback function to window-->
+<!--		window[callbackName] = function (data) {-->
+<!--			callback(data); // Call your custom callback with the data-->
+<!--			// Clean up after use-->
+<!--			delete window[callbackName];-->
+<!--			script.remove();-->
+<!--		};-->
+
+<!--		const queryEncoded = query.split(" ").join("+")-->
+
+<!--		// Create the script element with the JSONP URL-->
+<!--		const script = document.createElement("script")-->
+<!--		script.src = `https://suggestqueries.google.com/complete/search?client=firefox&q=${queryEncoded}&callback=${callbackName}&gl=${gl}`;-->
+<!--		document.body.appendChild(script);-->
+<!--	}-->
+<!--</script>-->
+
+<script src="v2/search.js"></script>
+</body>
+</html>
